@@ -18,7 +18,7 @@ export default function ItemWindow({ item, setInOpenWindowItem }) {
                 </div>
 
                 <div>
-                    <span>{item.price}</span>
+                    <span>{item.price}р</span>
                 </div>
 
                 <div>
