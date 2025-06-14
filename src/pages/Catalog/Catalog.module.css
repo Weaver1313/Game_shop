@@ -1,0 +1,34 @@
+.catalog__block {
+    padding-top: 4rem;
+}
+
+.banner {
+    background: url("/img/maxresdefault.jpg") no-repeat;
+    width: 100%;
+    height: 30rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.banner::before {
+    content: "Лучшие товары";
+    color: aliceblue;
+    font-size: 2rem;
+    position: absolute;
+    top: 3.5rem;
+    left: 1.5rem;
+}
+
+.banner::after {
+    content: "Для турниров";
+    color: aliceblue;
+    font-size: 1rem;
+    position: absolute;
+    top: 7rem;
+    left: 1.5rem;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+}
