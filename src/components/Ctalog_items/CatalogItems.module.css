@@ -31,3 +31,19 @@
     display: flex;
     justify-content: space-between;
 }
+
+.article__title button {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    background: red;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    transition: all 1s ease;
+    transform-origin: right bottom;
+}
+
+.article__title button:hover {
+    transform: scale(1.2);
+}
