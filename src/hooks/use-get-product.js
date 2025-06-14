@@ -55,6 +55,7 @@ export default function useGetProduct(dispatch, setIsLoaded) {
     const [productsInServer, setProductsInServer] = useState([]);
     useEffect(() => {
         setIsLoaded(true);
+
         new Promise((resolve) => {
             setTimeout(() => {
                 resolve(getProductsFromServer());
@@ -63,10 +64,12 @@ export default function useGetProduct(dispatch, setIsLoaded) {
             .then((loadedData) => {
                 return loadedData;
             })
+
             .then((data) => {
                 setProductsInServer(data);
                 dispatch({ type: "SET_PRODUCTS_DATA", payload: data });
             })
+
             .finally(() => {
                 setIsLoaded(false);
             });

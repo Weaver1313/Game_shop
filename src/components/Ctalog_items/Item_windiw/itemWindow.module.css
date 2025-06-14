@@ -1,0 +1,28 @@
+.block__item__window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* затемнение */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 2rem;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.block__item__window__img {
+    width: 30rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}

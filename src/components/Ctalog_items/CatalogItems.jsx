@@ -1,16 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./CatalogItems.module.css";
 import {
     FilterContext,
     ProductContext,
     SetProductInBasketContext,
 } from "../../Context";
+import ItemWindow from "./Item_windiw/itemWindow";
 
 export default function CatalogItems() {
     const product = useContext(ProductContext);
     const filterContext = useContext(FilterContext);
     const categoryFilter = filterContext.get("category");
     const setProductInBasket = useContext(SetProductInBasketContext);
+
+    const [inOpenWindowItem, setInOpenWindowItem] = useState(null);
+    console.log(inOpenWindowItem);
 
     const filteredProducts = categoryFilter
         ? product.filter((el) => el.category === categoryFilter)
@@ -25,7 +29,13 @@ export default function CatalogItems() {
             {filteredProducts.map((el) => (
                 <article key={el.id} className={styles.article}>
                     <div>
-                        <img src={`/img/${el.img}`} />
+                        <img
+                            className={styles.article__img}
+                            onClick={() => {
+                                setInOpenWindowItem(el);
+                            }}
+                            src={`/img/${el.img}`}
+                        />
                     </div>
                     <div className={styles.article__title}>
                         <span>{el.title}</span>
@@ -44,6 +54,12 @@ export default function CatalogItems() {
                     <div></div>
                 </article>
             ))}
+            {inOpenWindowItem && (
+                <ItemWindow
+                    item={inOpenWindowItem}
+                    setInOpenWindowItem={setInOpenWindowItem}
+                />
+            )}
         </div>
     );
 }
